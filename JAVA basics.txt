@@ -1,0 +1,277 @@
+Java Notes      20/04/2022
+
+
+Java is a case sensitive language.
+
+*Variables:- It is a named memory location.
+- A variable is an entity used to store any kind of data. 
+- It reserves memory depending on the type of data stored.
+- A variable can  be of a sepecific datatype, and according to the datatype it will store the value.
+- A variable can store only one value at a time.
+
+----  Rules to declare/naming the variable  ----
+
+- Variable name should always be meaningfull.
+- Can contain letters, digits, underscores and dollars
+- Cannot begin with digit
+- Cannot contain any other symbols, not even embedded blank space
+- Must not match keyword.
+- Variable names are case-sensitive. [E.g.- age, Age both allowed.] 
+
+----- Variable Declaration:- -------
+
+[access/non-access modifier] datatype varname [=value]
+
+
+*DataTypes:-
+- Type of data that you are storing. 
+- DataTypes are of 2 types-
+
+1) Primitive/value-type
+	 Each primitive type has a range also
+	 example, boolean: true and false
+	 byte:	-128 to 127
+	 
+Datatype	byte(s)		default initial value
+-----------------------------------------------------------
+boolean		1 bit		false
+byte		1		0		
+char		2		'\u0000'     u==unicode
+int		4		0
+short		2		0	
+long		8		0L or 0l
+float		4		0.0F or 0.0f
+double		8		0.0D or 0.0d or 0.0
+------------------------------------------------------------
+
+numeric types-
+	byte, int, long, short, float, double
+	
+	-> integral=> byte, int, long, short
+	-> real=> float, double
+
+non-numeric-
+	boolean, char
+		
+2) Nonprimitive /reference-type
+
+Object/String/Date/Array etc.		-null
+
+
+*KeyWords:-
+- Every programming language has its own set of KeyWords.
+- Every KeyWord has a specific predefined meaning in that language.
+- Cannot be used as a Class or Variable name.
+- Java has 50+3 keywords and must be written in lowercase.
+
+*Operators:-
+- Are used to perform operations.   
+Expression is made up of operands and operators
+operands can be variable and/or constant
+
+Eg:- area=3.14*rad*rad;
+
+operators: *,=
+operands: area,rad,3.14
+variable: area,rad
+constant: 3.14
+
+
+//Every operator has precedence (priority) and associativity(order of evaluation, L->R or R->L)
+
+a=b+c*d;	//* then + then =
+
+consider,
+a=(b+c)*d;	//+ then * then =
+
+
+Consider, a=1, b=2
+a=b;	=>a=2, b=2, = is R->L
+
+a+b	//+ is L->R
+
+
+Based on the no of operands-
+
+Unary operators - take 1 operands
+Binary operators- take 2 operands
+Ternary operators- take 3 operand
+
+
+Based on the actual operation-
+
+Arithmetic operators
+Logical operators
+Assignment operators
+Relational operators
+etc...
+
+
+-> Arithmetic operators-
+
++
+-
+*
+/
+%
+
+=> For integral operands-
+/ produces	qoutient part
+% produces	remainder part
+
+example, let a=5, b=2
+
+a/b	=> 2
+a%b	=> 1
+
+
+=> For real operands-
+/ produces q+r
+% should not be used with real operands
+
+example,
+a=5.0, b=2 OR a=5, b=2.0 OR a=5.0, b=2.0
+
+a/b	=> 2.5
+a%b	=> should not be used
+
+
+-> Relational operators
+<
+<=
+>
+>=
+==
+!=
+instanceof
+
+
+-> Assignment operators 
+=
++=
+-=
+*=
+/=
+%=
+&=
+|=
+^=
+etc...
+
+a+=b	=> a=a+b
+a*=b	=> a=a*b
+
+
+-> Logical operators
+
+&&	AND
+||	OR
+!	NOT
+
+example,
+
+if(a>b && a>c){
+	//statements will execute if both conditions are true
+}
+
+
+if(a>b || a>c){
+	//statements will execute if any one condition is true
+}
+
+
+if(!(a>b)){
+	//statements will execute if a>b is NOT true
+}
+
+
+-> Bitwise operators
+&
+|
+^
+<<
+>>
+>>>
+
+
+-> Conditional operator (ternary operator)
+
+?:
+
+(condition)?expression1:expression2;
+
+example, x=1,y=2
+z=(x>y)?x:y;
+
+=>
+
+if(x>y)
+	z=x;
+else
+	z=y;
+
+
+-> Unary operators
+
++
+-
+++
+--
+(type)
+!
+~ 
+
+
+Let a=10, can be written as a=+10
+
+//a+=10 and a=+10	are 2 different expressions
+
+
+Let a=10, -a	=> a=-10
+
+
+Let a=10, 	++a		=>a=11
+Let a=10,	a++		=>a=11		
+
+
+//When involved in expression then pre ++ and post ++ work differently
+Let a=10, b=a++;	=> b=10,a=11
+Let a=10, b=++a;	=> b=a=11
+
+Consider, a=1, b=2, c=3
+d=a+b*c++;
+d=7
+
+Consider, a=1, b=2, c=3
+d=a+b*++c;
+d=9
+
+Consider, a=10
+
+a=a++ + ++a;
+a=22
+
+*Input and Output in Java->
+
+Input-
+- to take input from the iuser we have to use the import command.
+-	import java[environment].util[package].Scanner[class];
+- 	Scanner {name} = new Scanner(System.in);
+
+Input Methods:->
+-	nextInt();
+- 	nextDouble();
+-	next();  --- single word;
+-	nextLine();  ---- complete line;
+
+Output-
+-System.out.print()
+			println();   o/p and cursor on new line
+			printf();	 formated print/output
+			
+
+Continue and break in Loops:->
+--------------------------------------------------
+*Continue: It is used to skip the instructions in the block of code for that iteration. 
+		   The control is shifted to the updation in the loop
+*Break   : It is used to terminate the code after the condition is met.
